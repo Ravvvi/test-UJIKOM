@@ -29,7 +29,6 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php
-            // Perbaikan: Menggunakan id_produk sesuai struktur tabel kamu
             $query = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY id_produk DESC");
             while($data = mysqli_fetch_array($query)):
             ?>
