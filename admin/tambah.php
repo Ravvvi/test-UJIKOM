@@ -35,10 +35,8 @@
             $stk  = $_POST['stok'];
             $spek = $_POST['spesifikasi'];
 
-            $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES('', '$nama', '$kat', '$hrg', '$stk', '$spek')");
-            if($insert){
-                echo "<p class='mt-4 text-green-600 font-bold'>Barang berhasil ditambahkan!</p>";
-            }
+           $insert = mysqli_query($koneksi, "INSERT INTO produk (nama_barang, kategori, harga, stok, spesifikasi) 
+          VALUES ('$nama', '$kat', '$hrg', '$stk', '$spek')");
         }
         ?>
     </div>
