@@ -29,7 +29,8 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php
-            $query = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY id DESC");
+            // Perbaikan: Menggunakan id_produk sesuai struktur tabel kamu
+            $query = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY id_produk DESC");
             while($data = mysqli_fetch_array($query)):
             ?>
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl transition-all duration-300 group">
@@ -38,7 +39,8 @@
                         <span class="bg-blue-100 text-blue-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                             <?php echo $data['kategori']; ?>
                         </span>
-                        <a href="../admin/hapus.php?id=<?php echo $data['id']; ?>" 
+                        
+                        <a href="../admin/hapus.php?id=<?php echo $data['id_produk']; ?>" 
                            onclick="return confirm('Yakin ingin menghapus produk ini?')"
                            class="opacity-0 group-hover:opacity-100 text-red-400 hover:text-red-600 transition-opacity">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,4 +82,10 @@
         </div>
     </main>
 
-    <footer class="bg-white
+    <footer class="bg-white border-t border-slate-200 py-8 mt-20">
+        <div class="container mx-auto text-center text-slate-400 text-sm font-medium">
+            &copy; 2026 TECH-SHOP SPAREPART. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
